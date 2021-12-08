@@ -38,8 +38,10 @@ echo "export PATH=\"\$HOME/.heroku/mongo/bin:\$PATH\"" > $BUILD_DIR/.profile.d/m
 echo "Initializing database"
 DB_PATH=$HEROKU_DIR/mongo/db
 LOG_PATH=$HEROKU_DIR/mongo/logs
+PIDFILE_PATH=$HEROKU_DIR/mongo/run
+
 mkdir -p $DB_PATH
 mkdir -p $LOG_PATH
-chmod a+w $DB_PATH
-chmod a+w $LOG_PATH
-$HEROKU_DIR/mongo/bin/mongod --dbpath $DB_PATH --logpath $LOG_PATH --fork
+mkdir -p $PIDFILE_PATH
+
+$HEROKU_DIR/mongo/bin/mongod --dbpath $DB_PATH --logpath $LOG_PATH --pidfilepath $PIDFILE_PATH --fork
