@@ -34,3 +34,9 @@ chmod +x $HEROKU_DIR/mongo/bin/*
 echo "Creating run-time environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$HOME/.heroku/mongo/bin:\$PATH\"" > $BUILD_DIR/.profile.d/mongo.sh
+
+echo "Initializing database"
+DB_PATH=$HEROKU_DIR/mongo/db
+mkdir -p $DB_PATH
+./$HEROKU_DIR/mongo/bin/mongod --dbpath $DB_PATH --fork
+
