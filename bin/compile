@@ -44,4 +44,4 @@ mkdir -p $DB_PATH
 mkdir -p $LOG_PATH
 mkdir -p $PIDFILE_PATH
 
-$HEROKU_DIR/mongo/bin/mongod --dbpath $DB_PATH --logpath $LOG_PATH/mongodb.log --pidfilepath $PIDFILE_PATH &
+$HEROKU_DIR/mongo/bin/mongod --dbpath $DB_PATH --logpath $LOG_PATH/mongodb.log --pidfilepath $PIDFILE_PATH --fork
