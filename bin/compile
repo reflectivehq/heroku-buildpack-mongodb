@@ -40,4 +40,4 @@ DB_PATH=$HEROKU_DIR/mongo/db
 LOG_PATH=$HEROKU_DIR/mongo/logs
 mkdir -p $DB_PATH
 mkdir -p $LOG_PATH
-$HEROKU_DIR/mongo/bin/mongod --dbpath $DB_PATH --logpath $LOG_PATH --fork
+$HEROKU_DIR/mongo/bin/mongod --dbpath $DB_PATH # --logpath $LOG_PATH --fork
